@@ -11,7 +11,6 @@ from nav2_msgs.action import NavigateToPose
 
 from visualization_msgs.msg import Marker
 from std_msgs.msg import ColorRGBA
-import random
 
 class ExplorationNode(Node):
     def __init__(self):
@@ -168,6 +167,20 @@ class ExplorationNode(Node):
 
 
     def get_next_zone(self, init_x, init_y):
+        def cal_negone_grid(graph, zone):
+            count = 0
+            n, m = (5, 5)
+            for i in range(n):
+                for j in range(m):
+                    new_row, new_col = zone[0] + i, zone[1] + j
+                    if 0 <= new_row < len(graph) and 0 <= new_col < len(graph[0]) and graph[new_row][new_col] == -1:
+                        count += 1
+
+            if count == (n * m):
+                return True
+            return False
+            
+
         """로봇 위치(init_x, init_y)에서 가장 멀리 떨어진 방문하지 않은 구역을 찾는 함수"""
         graph = [[self.map_data[row * self.map_width + col] for col in range(self.map_width)] for row in range(self.map_height)]
 
@@ -180,7 +193,7 @@ class ExplorationNode(Node):
         max_distance = -1
         farthest_zone = None
 
-        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]  # 상, 하, 좌, 우
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
         while queue:
             current_row, current_col, distance = queue.popleft()
@@ -201,9 +214,12 @@ class ExplorationNode(Node):
                     for dr, dc in directions:
                         new_row, new_col = zone_row + dr, zone_col + dc
                         if 0 <= new_row < len(graph) and 0 <= new_col < len(graph[0]) and graph[new_row][new_col] == -1:
-                            if distance > max_distance:
-                                max_distance = distance
-                                farthest_zone = zone
+                            if cal_negone_grid(graph, zone): 
+                                if distance > max_distance:
+                                    max_distance = distance
+                                    farthest_zone = zone
+                                    break
+                            else:
                                 break
 
             for dr, dc in directions:
