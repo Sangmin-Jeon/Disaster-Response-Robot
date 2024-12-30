@@ -11,6 +11,7 @@ from nav2_msgs.action import NavigateToPose
 
 from visualization_msgs.msg import Marker
 from std_msgs.msg import ColorRGBA
+import random
 
 class ExplorationNode(Node):
     def __init__(self):
@@ -18,7 +19,6 @@ class ExplorationNode(Node):
 
         self.callback_group = ReentrantCallbackGroup()
 
-        
         qos_profile = QoSProfile(
             depth=10,
             reliability=ReliabilityPolicy.BEST_EFFORT,  
@@ -92,9 +92,6 @@ class ExplorationNode(Node):
             # 방문한 구역 기록
             self.record_visited_zone(col, row)
 
-            # 탐색 진행
-            self.get_next_zone(col, row)
-
             farthest_zone = self.get_next_zone(col, row)
 
             self.send_goal(farthest_zone)
@@ -144,7 +141,7 @@ class ExplorationNode(Node):
                     self.get_logger().info(f"Visited nearby zone: {nearby_zone}")
         
         # 방문한 구역을 Marker로 시각화
-        self.publish_visited_zone_marker(zone_row, zone_col)
+        #self.publish_visited_zone_marker(zone_row, zone_col)
 
         # 실제 물리적 구역 크기 출력
         self.get_logger().info(f"Real zone size: {real_zone_size} meters")
@@ -200,12 +197,15 @@ class ExplorationNode(Node):
 
                 # 해당 구역을 아직 방문하지 않았다면
                 if zone not in self.visited_zones:
-                    # 가장 멀리 있는 구역을 찾은 경우 업데이트
-                    if distance > max_distance:
-                        max_distance = distance
-                        farthest_zone = zone
+                    # 가장 멀리 있고 주변에 -1이 있는 경계 구역을 찾은 경우 업데이트
+                    for dr, dc in directions:
+                        new_row, new_col = zone_row + dr, zone_col + dc
+                        if 0 <= new_row < len(graph) and 0 <= new_col < len(graph[0]) and graph[new_row][new_col] == -1:
+                            if distance > max_distance:
+                                max_distance = distance
+                                farthest_zone = zone
+                                break
 
-            # 상하좌우로 이동
             for dr, dc in directions:
                 new_row, new_col = current_row + dr, current_col + dc
 
@@ -220,6 +220,8 @@ class ExplorationNode(Node):
             self.get_logger().info("가장 멀리 있는 구역을 찾을 수 없습니다.")
 
         return farthest_zone
+
+
 
     def send_goal(self, farthest_zone):
         """가장 멀리 있는 구역으로 goal을 전송하는 함수"""
