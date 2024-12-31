@@ -1,0 +1,3 @@
+[console_scripts]
+explore = slam_pkg.explore_map:main
+map = slam_pkg.show_map:main

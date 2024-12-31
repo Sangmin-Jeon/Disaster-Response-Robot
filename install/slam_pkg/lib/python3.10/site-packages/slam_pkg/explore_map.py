@@ -225,7 +225,7 @@ class ExplorationNode(Node):
                 for dr, dc in directions:
                     new_row, new_col = zone_row + dr, zone_col + dc
                     # print(f'{len(graph[0])}, {new_row} : {len(graph)}, {new_col}')
-                    if 0 <= new_row < len(graph) and 0 <= new_col < len(graph[0]) and graph[new_row][new_col] == -1:
+                    if 0 <= new_row < len(graph[0]) and 0 <= new_col < len(graph) and graph[new_row][new_col] == -1:
                         is_boundary = True
 
                 if is_boundary:

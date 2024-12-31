@@ -1,0 +1,44 @@
+[0.836s] Invoking command in '/home/rokey/turtlebot4_slam_proj/src/slam_pkg': PYTHONPATH=/home/rokey/turtlebot4_slam_proj/build/slam_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/slam_pkg build --build-base /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build install --record /home/rokey/turtlebot4_slam_proj/build/slam_pkg/install.log --single-version-externally-managed install_data
+[1.157s] running egg_info
+[1.158s] creating ../../build/slam_pkg/slam_pkg.egg-info
+[1.170s] writing ../../build/slam_pkg/slam_pkg.egg-info/PKG-INFO
+[1.170s] writing dependency_links to ../../build/slam_pkg/slam_pkg.egg-info/dependency_links.txt
+[1.170s] writing entry points to ../../build/slam_pkg/slam_pkg.egg-info/entry_points.txt
+[1.171s] writing requirements to ../../build/slam_pkg/slam_pkg.egg-info/requires.txt
+[1.171s] writing top-level names to ../../build/slam_pkg/slam_pkg.egg-info/top_level.txt
+[1.171s] writing manifest file '../../build/slam_pkg/slam_pkg.egg-info/SOURCES.txt'
+[1.195s] reading manifest file '../../build/slam_pkg/slam_pkg.egg-info/SOURCES.txt'
+[1.197s] writing manifest file '../../build/slam_pkg/slam_pkg.egg-info/SOURCES.txt'
+[1.197s] running build
+[1.197s] running build_py
+[1.197s] creating /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build
+[1.197s] creating /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib
+[1.197s] creating /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg
+[1.197s] copying slam_pkg/explore_map.py -> /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg
+[1.197s] copying slam_pkg/__init__.py -> /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg
+[1.197s] copying slam_pkg/history.py -> /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg
+[1.197s] copying slam_pkg/show_map.py -> /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg
+[1.197s] running install
+[1.202s] running install_lib
+[1.215s] creating /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg
+[1.215s] copying /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg/explore_map.py -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg
+[1.215s] copying /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg/__init__.py -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg
+[1.215s] copying /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg/history.py -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg
+[1.215s] copying /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build/lib/slam_pkg/show_map.py -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg
+[1.216s] byte-compiling /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg/explore_map.py to explore_map.cpython-310.pyc
+[1.217s] byte-compiling /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg/__init__.py to __init__.cpython-310.pyc
+[1.218s] byte-compiling /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg/history.py to history.cpython-310.pyc
+[1.218s] byte-compiling /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg/show_map.py to show_map.cpython-310.pyc
+[1.219s] running install_data
+[1.219s] creating /home/rokey/turtlebot4_slam_proj/install/slam_pkg/share/ament_index
+[1.219s] creating /home/rokey/turtlebot4_slam_proj/install/slam_pkg/share/ament_index/resource_index
+[1.219s] creating /home/rokey/turtlebot4_slam_proj/install/slam_pkg/share/ament_index/resource_index/packages
+[1.219s] copying resource/slam_pkg -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/share/ament_index/resource_index/packages
+[1.219s] copying package.xml -> /home/rokey/turtlebot4_slam_proj/install/slam_pkg/share/slam_pkg
+[1.219s] running install_egg_info
+[1.233s] Copying ../../build/slam_pkg/slam_pkg.egg-info to /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages/slam_pkg-0.0.0-py3.10.egg-info
+[1.234s] running install_scripts
+[1.292s] Installing explore script to /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/slam_pkg
+[1.292s] Installing map script to /home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/slam_pkg
+[1.292s] writing list of installed files to '/home/rokey/turtlebot4_slam_proj/build/slam_pkg/install.log'
+[1.326s] Invoked command in '/home/rokey/turtlebot4_slam_proj/src/slam_pkg' returned '0': PYTHONPATH=/home/rokey/turtlebot4_slam_proj/build/slam_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_slam_proj/install/slam_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/slam_pkg build --build-base /home/rokey/turtlebot4_slam_proj/build/slam_pkg/build install --record /home/rokey/turtlebot4_slam_proj/build/slam_pkg/install.log --single-version-externally-managed install_data
